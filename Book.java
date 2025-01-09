@@ -1,19 +1,25 @@
-public class Book extends Library{ //thinking about this extends part
+public class Book {
 
-    static String name;
-    static String author;
-    static boolean availability;
+    private String title;
+    private String author;
+    private boolean isAvailable;
 
-    Book(String name, String author, boolean availability) {
-        this.name = name;
+    public Book(String name, String author, boolean isAvailable) {
+        this.title = name;
         this.author = author;
-        this.availability = availability;
+        this.isAvailable = isAvailable;
     }
 
-    //test method for now
-    public String callAttributes() {
-        String attributes = name + " was written by "
-                + author + "\navailability status: " + availability;
-        return attributes;
+    //learned how to use the ternary operator
+    public String getBookDetails() {
+        return "Title: " + title + "\nDirector: " + author + "\nAvailability: " + (isAvailable ? "Available" : "Not Available") + "\n";
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
     }
 }
